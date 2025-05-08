@@ -69,7 +69,7 @@ export const previewShippingOrder = async ({
     service_type_id: 2,
     from_district_id: fromDistrict,
     required_note: "KHONGCHOXEMHANG",
-    content: "Giày", // thay ddoir
+    content: "Giày",
   };
 
   try {
@@ -90,7 +90,7 @@ export const getLeadTime = async ({ toDistrict, wardCode, serviceId }) => {
       to_ward_code: wardCode,
       service_id: serviceId,
     });
-    return res.data.data.leadtime; // UNIX timestamp (giây)
+    return res.data.data.leadtime;
   } catch (error) {
   
     throw new Error(

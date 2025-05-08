@@ -210,8 +210,8 @@ export default function AddressModal({
           toast.error(response.message);
           return;
         }
-        toast.success("Thêm địa chỉ thành công");
-        updatedId = response.id;
+        toast.success(response.message);
+        updatedId = response.data.id;
         updatedAddresses = [...addresses, response];
       } else if (modalMode === "edit") {
         const response = await addressApi.updateAddressById(
@@ -222,7 +222,7 @@ export default function AddressModal({
           toast.error(response.message);
           return;
         }
-        toast.success("Cập nhật địa chỉ thành công");
+        toast.success(response.message);
         updatedId = selectedAddressId;
         updatedAddresses = addresses.map((addr) =>
           addr.id === selectedAddressId
@@ -244,7 +244,7 @@ export default function AddressModal({
 
       onClose();
     } catch (error) {
-      toast.error(error);
+      toast.error(error.response.message);
     } finally {
       setIsLoading(false);
     }

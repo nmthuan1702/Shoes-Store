@@ -188,7 +188,6 @@ export default function CheckoutPage() {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   };
 
-  ////////////////////////////////////////////////////////////////
   const [toName, setToName] = useState("");
   const [toPhone, setToPhone] = useState("");
   const [toAddress, setToAddress] = useState("");
@@ -270,9 +269,6 @@ export default function CheckoutPage() {
       handleCalculate();
     }
   }, [selectedAddress, cartItems]);
-
-  /////////////////////////////////////////////////////////////////
-
   const renderAddressSection = () => {
     if (isLoading) {
       return <Loading />;
