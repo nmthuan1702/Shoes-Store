@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import adminOrderApi from "../../../api/admin/adminOrderApi";
 import ViewOrderModal from "./ViewOrderModal";
 import DeleteOrderModal from "./DeleteOrderModal";
 import { toast } from "react-toastify";
